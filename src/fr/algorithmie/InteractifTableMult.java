@@ -21,8 +21,12 @@ public class InteractifTableMult {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int nb;
+		char reponse = ' ';
+		
+		Scanner sc = new Scanner(System.in);
+		do {
     	System.out.println("Veuillez saisir un nombre compris entre 1 et 10 :");
-	    try (Scanner scanner = new Scanner(System.in)) {
+	    Scanner scanner = new Scanner(System.in);
 			nb = scanner.nextInt();
 			
 			while (nb<1 || nb>10) {
@@ -30,9 +34,19 @@ public class InteractifTableMult {
 			   nb = scanner.nextInt();
 			 
 			}
-		}
+		
 	    System.out.println("\n La table de multiplication de " +nb+ ":\n");
 	   for (int i = 1; i <= 10; i++){
 		   System.out.println(nb+"*"+i+"=" +nb*i);	   
-	}}}	
+	   }
+       System.out.println("--------------------------");
+       System.out.println("Voulez vous afficher la table de multiplication d'un autre nombre? (O/N)");
+       //Scanner sc = new Scanner(System.in);
+       String str = sc.next();
+       reponse = str.charAt(0);
+	   }while(reponse == 'O'|reponse == 'o');
+        System.out.println("Au revoir!");
+}
+	
+}	
 
